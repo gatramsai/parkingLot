@@ -1,24 +1,35 @@
 /**
  * Created by Sai Gatram on 11/27/2015.
  */
-public class ParkingSpot {
+public class ParkingSpot
+{
     private Vehicle vehicle;
     private String spotSize;
     private int row;
     private Level level;
+    private int spotNumber;
 
-    public ParkingSpot(int row, Level level, String spotSize, Vehicle vehicle) {
-        this.row = row;
+    public ParkingSpot(int spotNumber, Level level, String spotSize, int row) {
+        this.spotNumber = spotNumber;
         this.level = level;
         this.spotSize = spotSize;
-        this.vehicle = vehicle;
+        this.row = row;
     }
 
     public boolean isAvailable() {
         return vehicle == null;
     }
 
-    public String getSpotSize() {
+    public String getSpotSize()
+    {
         return spotSize;
+    }
+
+    public void print() {
+        System.out.print(spotSize+" ");
+    }
+
+    public int getRow() {
+        return row;
     }
 }
