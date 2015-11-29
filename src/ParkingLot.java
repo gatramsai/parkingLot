@@ -17,10 +17,10 @@ public class ParkingLot {
     public void print()
     {
         for (int level = 0; level < levels.length; level++) {
-            System.out.println("Level " + level + ":");
+            System.out.print("Level " + level + ":        ");
             levels[level].print();
-            System.out.println("");
         }
+        System.out.println(" ");
     }
     public boolean parkVehicle(Vehicle vehicle) {
         for (int i = 0; i < levels.length; i++) {

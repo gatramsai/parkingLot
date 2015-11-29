@@ -13,6 +13,6 @@ public class Bus extends Vehicle
 
     public  boolean canFitInSpot(ParkingSpot spot)
     {
-        return spot.getSpotSize().equals("large");
+        return spot.getSpotSize() == "large";
     }
 }

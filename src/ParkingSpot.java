@@ -28,7 +28,17 @@ public class ParkingSpot
     }
 
     public void print() {
-        System.out.print(spotSize+" ");
+        if (vehicle == null) {
+            if (spotSize == "compact") {
+                System.out.print("c");
+            } else if (spotSize == "large") {
+                System.out.print("l");
+            } else if (spotSize == "motorcycle") {
+                System.out.print("m");
+            }
+        } else {
+            vehicle.print();
+        }
     }
 
     public int getRow() {

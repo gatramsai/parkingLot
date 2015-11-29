@@ -55,10 +55,7 @@ public class Level {
         }
         System.out.println(" ");
     }
-    public boolean parkVehicle(Vehicle vehicle)
-
-    {
-
+    public boolean parkVehicle(Vehicle vehicle){
         int spotNumber = findOpenSpots(vehicle);
         if (spotNumber < 0) {
             return false;
@@ -92,12 +89,11 @@ public class Level {
         return -1;
     }
     private boolean parkStartingAtSpot(int spotNumber, Vehicle vehicle) {
-
         boolean success = true;
-        for (int i = spotNumber; i < spotNumber + vehicle.spotsNeeded; i++) {
+        for (int i = spotNumber; i < spotNumber + vehicle.getSpotsNeeded(); i++) {
             success &= spots[i].park(vehicle);
         }
-        availableSpots -= vehicle.spotsNeeded;
+        availableSpots -= vehicle.getSpotsNeeded();
         return success;
     }
 

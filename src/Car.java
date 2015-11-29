@@ -9,7 +9,7 @@ public class Car extends Vehicle{
     }
     public boolean canFitInSpot(ParkingSpot spot)
     {
-        return spot.getSpotSize().equals("compact");
+        return spot.getSpotSize() == "large" || spot.getSpotSize() == "compact";
     }
     public void print() {
         System.out.print("C");

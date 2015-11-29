@@ -10,8 +10,15 @@ public class Main {
     public static void main(String[] args) {
 
         ParkingLot lot = new ParkingLot();
+        lot.print();
+        Vehicle v = new Bus();
+        lot.parkVehicle(v);
+        lot.print();
 
-        Vehicle v = null;
+        Vehicle c = new Car();
+        lot.parkVehicle(c);
+        lot.print();
+/*
         while (v == null || lot.parkVehicle(v)) {
             lot.print();
             int r = (int) (Math.random()*10);
@@ -28,7 +35,7 @@ public class Main {
         }
         System.out.println("Parking Failed. Final state: ");
         lot.print();
+*/
     }
-
-    }
+}
 

@@ -11,7 +11,7 @@ public class Motorcycle extends Vehicle
 
     public  boolean canFitInSpot(ParkingSpot spot)
     {
-        return spot.getSpotSize().equals("motorcycle");
+        return true;
     }
     public void print() {
         System.out.print("M");
