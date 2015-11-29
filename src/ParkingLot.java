@@ -28,7 +28,10 @@ public class ParkingLot {
                 return true;
             }
         }
+        System.out.println("no more oplz");
+        System.exit(1);
         return false;
+
     }
 
 }
