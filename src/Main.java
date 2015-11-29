@@ -8,24 +8,27 @@ Purpose of Class: This is the main class that will be used for testing the code.
 public class Main {
 
     public static void main(String[] args) {
-        /*
-        Bus bus = new Bus();
-        Car car = new Car();
-        Motorcycle mot = new Motorcycle();
-        ParkingLot park = new ParkingLot();
-        */
 
-        Level level = new Level(30,0);
-        Level level1 = new Level(30,1);
-        Level level2 = new Level(30,2);
-        Level level3 = new Level(30,3);
-        Level level4 = new Level(30,4);
+        ParkingLot lot = new ParkingLot();
 
-        level.print();
-        level1.print();
-        level2.print();
-        level3.print();
-        level4.print();
-        System.out.println();
+        Vehicle v = null;
+        while (v == null || lot.parkVehicle(v)) {
+            lot.print();
+            int r = (int) (Math.random()*10);
+            if (r < 2) {
+                v = new Bus();
+            } else if (r < 4) {
+                v = new Motorcycle();
+            } else {
+                v = new Car();
+            }
+            System.out.print("\nParking a ");
+            v.print();
+            System.out.println("");
+        }
+        System.out.println("Parking Failed. Final state: ");
+        lot.print();
     }
-}
+
+    }
+

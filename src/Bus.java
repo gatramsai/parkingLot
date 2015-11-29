@@ -7,6 +7,9 @@ public class Bus extends Vehicle
         spotsNeeded = 5;
         vehicleSize = "large";
     }
+    public void print() {
+        System.out.print("B");
+    }
 
     public  boolean canFitInSpot(ParkingSpot spot)
     {

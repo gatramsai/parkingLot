@@ -16,8 +16,10 @@ public class ParkingSpot
         this.row = row;
     }
 
-    public boolean isAvailable() {
-        return vehicle == null;
+    public boolean isSpotTaken() {return vehicle == null;}
+
+    public boolean ifFit(Vehicle vehicle) {
+        return isSpotTaken() && vehicle.canFitInSpot(this);
     }
 
     public String getSpotSize()
@@ -31,5 +33,14 @@ public class ParkingSpot
 
     public int getRow() {
         return row;
+    }
+
+    public boolean park(Vehicle v) {
+        if (!ifFit(v)) {
+            return false;
+        }
+        vehicle = v;
+        vehicle.parkInSpot(this);
+        return true;
     }
 }

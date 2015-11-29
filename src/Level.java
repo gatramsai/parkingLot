@@ -43,10 +43,8 @@ public class Level {
         return availableSpots;
     }
 
-
     public void print() {
-        int lastRow = -1;
-        System.out.println("Level " +level + ":");
+        int lastRow = 6;//this just has to not be 0 for the increment to be placed in the first row (or the zero row)
         for (int i = 0; i < spots.length; i++) {
             ParkingSpot spot = spots[i];
             if (spot.getRow() != lastRow) {
@@ -57,4 +55,50 @@ public class Level {
         }
         System.out.println(" ");
     }
+    public boolean parkVehicle(Vehicle vehicle)
+
+    {
+
+        int spotNumber = findOpenSpots(vehicle);
+        if (spotNumber < 0) {
+            return false;
+        }
+        if (getAvailableSpots() < vehicle.getSpotsNeeded()) {
+            return false;
+        }
+
+        return parkStartingAtSpot(spotNumber, vehicle);
+    }
+
+    private int findOpenSpots(Vehicle vehicle) {
+        int spotsNeeded = vehicle.getSpotsNeeded();
+        int lastRow = -1;
+        int spotsFound = 0;
+        for (int i = 0; i < spots.length; i++) {
+            ParkingSpot spot = spots[i];
+            if (lastRow != spot.getRow()) {
+                spotsFound = 0;
+                lastRow = spot.getRow();
+            }
+            if (spot.ifFit(vehicle)) {
+                spotsFound++;
+            } else {
+                spotsFound = 0;
+            }
+            if (spotsFound == spotsNeeded) {
+                return i - (spotsNeeded - 1);
+            }
+        }
+        return -1;
+    }
+    private boolean parkStartingAtSpot(int spotNumber, Vehicle vehicle) {
+
+        boolean success = true;
+        for (int i = spotNumber; i < spotNumber + vehicle.spotsNeeded; i++) {
+            success &= spots[i].park(vehicle);
+        }
+        availableSpots -= vehicle.spotsNeeded;
+        return success;
+    }
+
 }

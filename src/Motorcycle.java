@@ -13,4 +13,7 @@ public class Motorcycle extends Vehicle
     {
         return spot.getSpotSize().equals("motorcycle");
     }
+    public void print() {
+        System.out.print("M");
+    }
 }

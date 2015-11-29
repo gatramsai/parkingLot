@@ -1,8 +1,10 @@
+import java.util.ArrayList;
+
 /**
  * Created by Sai Gatram on 11/27/2015.
  */
 public abstract class Vehicle {
-    ParkingSpot[] parkingSpots= new ParkingSpot[50];
+    protected ArrayList<ParkingSpot> parkingSpots = new ArrayList<ParkingSpot>();
 
     protected int spotsNeeded;
     protected String vehicleSize;
@@ -16,4 +18,9 @@ public abstract class Vehicle {
     }
 
     public abstract boolean canFitInSpot(ParkingSpot spot);
+    public abstract void print();
+
+    public void parkInSpot(ParkingSpot spot) {
+        parkingSpots.add(spot);
+    }
 }

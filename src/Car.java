@@ -11,5 +11,8 @@ public class Car extends Vehicle{
     {
         return spot.getSpotSize().equals("compact");
     }
+    public void print() {
+        System.out.print("C");
+    }
 
 }
