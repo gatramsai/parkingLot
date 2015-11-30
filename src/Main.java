@@ -1,8 +1,9 @@
 /*
 Name: Sai Gatram
 Class and Section: 2336.002
-Purpose of Class: This is the main class that will be used for testing the code. Without this the program would not work.
- */
+Purpose of Class: This is the main class that will be used for testing the code. Without this the program would not work. This part will create an instant of the parking lot which allows us to use the
+    parking lot functions.
+*/
 
 
 public class Main {
@@ -11,10 +12,13 @@ public class Main {
 
         ParkingLot lot = new ParkingLot();
         lot.print();
+
+        Vehicle ggg = new Motorcycle();
+        lot.parkVehicle(ggg);
+        lot.print();
         Vehicle v = new Bus();
         lot.parkVehicle(v);
         lot.print();
-
         Vehicle c = new Car();
         lot.parkVehicle(c);
         lot.print();
@@ -82,29 +86,22 @@ public class Main {
         Vehicle m6tt = new Bus();
         lot.parkVehicle(m6tt);
         lot.print();
-
-
-
-
-
-/*
-        while (v == null || lot.parkVehicle(v)) {
-            lot.print();
-            int r = (int) (Math.random()*10);
-            if (r < 2) {
-                v = new Bus();
-            } else if (r < 4) {
-                v = new Motorcycle();
-            } else {
-                v = new Car();
-            }
-            System.out.print("\nParking a ");
-            v.print();
-            System.out.println("");
-        }
-        System.out.println("Parking Failed. Final state: ");
+        Vehicle m6ttt = new Bus();
+        lot.parkVehicle(m6ttt);
         lot.print();
-*/
+        Vehicle m6tttt = new Bus();
+        lot.parkVehicle(m6tttt);
+        lot.print();
+        Vehicle m6ttttt = new Bus();
+        lot.parkVehicle(m6ttttt);
+        lot.print();
+        Vehicle m6tttttttt = new Car();
+        lot.parkVehicle(m6tttttttt);
+        lot.print();
+        Vehicle m6ttttttt = new Bus();
+        lot.parkVehicle(m6ttttttt);
+        lot.print();
+
     }
 }
 

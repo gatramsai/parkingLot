@@ -1,11 +1,18 @@
+
+/*
+Name: Sai Gatram
+Class and Section: 2336.002
+Purpose of Class: This is the Vehicle class that is made abstract. The abstract class vehicle allows us to  define a basic functionality leaving undefined parts. The class defines the spots needed and the vehicle
+    size which all the bus,motorcycle, and car classes use.
+*/
+
 import java.util.ArrayList;
 
-/**
- * Created by Sai Gatram on 11/27/2015.
- */
-public abstract class Vehicle {
-    protected ArrayList<ParkingSpot> parkingSpots = new ArrayList<ParkingSpot>();
 
+public abstract class Vehicle {
+    //protected ArrayList<ParkingSpot> parkingSpaces = new ArrayList<ParkingSpot>();
+
+    //These  will be defined in each of the vehicle classes to match the class.
     protected int spotsNeeded;
     protected String vehicleSize;
 
@@ -13,14 +20,10 @@ public abstract class Vehicle {
         return spotsNeeded;
     }
 
-    public String getVehicleSize() {
-        return vehicleSize;
-    }
+    public abstract boolean canFitInSpot(ParkingSpot spot);//this will be defined in each of the vehicle classes to match the class. For instacne the motorcycle can fit in any spot.
+    public abstract void print();//this will be defined in each of the vehicle classes to match the class. The bus will print B to show it has been parked.
 
-    public abstract boolean canFitInSpot(ParkingSpot spot);
-    public abstract void print();
-
-    public void parkInSpot(ParkingSpot spot) {
-        parkingSpots.add(spot);
-    }
+   // public void parkInSpot(ParkingSpot spot) {
+   //     parkingSpaces.add(spot);
+   // }
 }
