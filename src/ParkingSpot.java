@@ -10,13 +10,10 @@ public class ParkingSpot
     private Vehicle vehicle;
     private String spotSize;
     private int row;
-   // private Level level;
-   // private int spotNumber;
+
 
     //This is the constructor for the parking spot. It is called in the level class multiple times. All it needed in the spotsize and the row.
-    public ParkingSpot(String spotSize, int row) {// public ParkingSpot(int spotNumber, Level level, String spotSize, int row) {
-        //this.spotNumber = spotNumber;
-        //this.level = level;
+    public ParkingSpot(String spotSize, int row) {
         this.spotSize = spotSize;
         this.row = row;
     }
@@ -34,7 +31,7 @@ public class ParkingSpot
         return spotSize;
     }
 
-    //This fucntion just prints the spot sizes when they are not occupied by a vehicle is a readible way.
+    //This function just prints the spot sizes when they are not occupied by a vehicle is a readible way.
     public void print() {
         if (vehicle == null)
         {
@@ -56,7 +53,7 @@ public class ParkingSpot
         return row;
     }
 
-    // This fucntion occupies the vehicle variable in the parkingSpot object, with the vehicle provided in the fucntion call. It is called by level in the parkAtSpot fucntion.
+    // This function occupies the vehicle variable in the parkingSpot object, with the vehicle provided in the fucntion call. It is called by level in the parkAtSpot fucntion.
     public boolean park(Vehicle v)
     {
         if (ifFit(v)==false)

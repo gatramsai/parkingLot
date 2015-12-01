@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 
 public abstract class Vehicle {
-    //protected ArrayList<ParkingSpot> parkingSpaces = new ArrayList<ParkingSpot>();
+
 
     //These  will be defined in each of the vehicle classes to match the class.
     protected int spotsNeeded;
@@ -23,7 +23,4 @@ public abstract class Vehicle {
     public abstract boolean canFitInSpot(ParkingSpot spot);//this will be defined in each of the vehicle classes to match the class. For instacne the motorcycle can fit in any spot.
     public abstract void print();//this will be defined in each of the vehicle classes to match the class. The bus will print B to show it has been parked.
 
-   // public void parkInSpot(ParkingSpot spot) {
-   //     parkingSpaces.add(spot);
-   // }
 }

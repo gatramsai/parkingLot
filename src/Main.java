@@ -11,6 +11,7 @@ public class Main {
     public static void main(String[] args) {
 
         ParkingLot lot = new ParkingLot();
+        System.out.println("Print the empty parkingLot");
         lot.print();
 
         Vehicle ggg = new Motorcycle();
